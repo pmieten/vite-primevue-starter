@@ -90,3 +90,10 @@ JetBrains is supporting this open source project with:
 
 [![Intellij IDEA](http://www.jetbrains.com/img/logos/logo_intellij_idea.png)](http://www.jetbrains.com/idea/)
 
+##Primeview
+https://www.primefaces.org/primevue/showcase-v2/#/datatable/crud
+
+
+Rozwiązanie problemu:
+is declared but its value is never read.Vetur(6133)
+https://github.com/vuejs/vetur/issues/3115
