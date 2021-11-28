@@ -5,7 +5,7 @@ import { defineStore } from 'pinia';
 export const useAuthStore = defineStore('auth', {
   // a function that returns a fresh state
   state: () => ({
-    authentificated: false,
+    authentificated: true,
     email: 'admin@test.com',
   }),
   // optional getters

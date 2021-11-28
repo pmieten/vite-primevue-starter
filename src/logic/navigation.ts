@@ -1,5 +1,12 @@
 export const navigationMenu = [
   {
+    label: 'Administracja',
+    items: [
+      {label: 'Produkty', icon: 'pi pi-fw pi-home', to: '/administration/products'},
+      {label: 'Pracownicy', icon: 'pi pi-fw pi-home', to: '/administration/employees'}
+    ],
+  },
+  {
     label: 'Home',
     items: [{
       label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/',
