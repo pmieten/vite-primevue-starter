@@ -2,33 +2,45 @@
   <div class="layout-menu-container">
     <InputText v-model="model.lastName" />
     employee Editor
-    {{ textValue2 }} | {{ root }} | {{ mo }} |
+    {{ textValue2 }} | {{ root }} | <br />model.id: {{ model.id }} <br />employeeId: {{ employeeId }} |
     {{ model.getName() }}
   </div>
 </template>
 
 <script setup lang='ts'>
-import { Employee } from './model';
+import { onBeforeMount, onMounted, onUpdated, onUnmounted } from 'vue'
+import { Employee } from './model'
 
-const textValue2 = ref('Some Text');
-
-const textValue5 = ref('Some Text');
+const textValue2 = ref('Some Text')
+const model: Employee = ref(null)
 
 interface Props {
-  mo?: Employee;
-  root?: string;
+  employeeId?: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  root: 'false',
-});
+  employeeId: new Employee(),
+})
 
-let e = new Employee();
-e.firstName = 'name test';
-e.lastName = 'last name test';
-const model: Employee = ref(e);
+const save = () => {
+  alert('ddd')
+}
+
+defineExpose({
+  save,
+})
+
+onBeforeMount(() => {
+  const e = new Employee()
+  // // e.Id = employeeId
+  e.firstName = 'name test'
+  e.lastName = 'last name test'
+  model.value = e
+})
+
+onMounted(() => {})
+
 </script>
-
 
 <style scoped>
 </style>
