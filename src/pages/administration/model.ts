@@ -1,9 +1,10 @@
 export class Employee {
-  public firstName: string
-  public lastName: string
-  public email: string
-  public rola: string
- 
+  public id?: number
+  public firstName = ''
+  public lastName = ''
+  public email = ''
+  public rola = ''
+
   public getName() {
     return `${this.firstName}  ${this.lastName}`
   }
