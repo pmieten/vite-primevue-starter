@@ -1,8 +1,12 @@
 <template>
+  <AfEditorDialog ref="afEditorDialog" header="Employee details">
+    <EmployeeEditor></EmployeeEditor>
+  </AfEditorDialog>
+<Button label="open dialog"  @click="openGenericDialog"></Button>
   <Dialog
     :visible="isOpenEmployeeDialog"
     :style="{ width: '450px' }"
-    header="Product Details"
+    header="Employee Details from dialog"
     :modal="true"
     class="p-fluid"
   >
@@ -38,6 +42,7 @@
 </template>
 <script setup lang='ts'>
 import EmployeeEditor from './employeeEditor.vue'
+import AfEditorDialog from '@/components/af/afEditorDialog.vue'
 
 const isOpenEmployeeDialog = ref(false)
 const employees = [
@@ -70,6 +75,11 @@ const employeeEditorMounted = () => {
 
 const saveEmployee = () => {
   employeeEditor1.value.save()
+}
+
+const afEditorDialog = ref<AfEditorDialog>(null)
+const openGenericDialog = () => {
+  afEditorDialog.value.create()
 }
 
 const employeeEditor1 = ref<EmployeeEditor>(null)

@@ -97,3 +97,15 @@ https://www.primefaces.org/primevue/showcase-v2/#/datatable/crud
 Rozwiązanie problemu:
 is declared but its value is never read.Vetur(6133)
 https://github.com/vuejs/vetur/issues/3115
+
+
+Lifecycle Hooks
+https://v3.vuejs.org/guide/composition-api-lifecycle-hooks.html
+
+Script setup
+https://github.com/vuejs/rfcs/blob/master/active-rfcs/0040-script-setup.md
+https://learnvue.co/2021/05/explaining-the-new-script-setup-type-in-vue-3-major-takeaways-from-the-rfc/
+
+
+children <-> parent 
+https://stackoverflow.com/questions/64407883/vue-3-access-child-component-from-slots
