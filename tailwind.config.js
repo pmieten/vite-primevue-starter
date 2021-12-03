@@ -1,7 +1,7 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-    mode: 'jit',
+    mode: 'watch',
     prefix: 'tw-',
     purge: {
         enabled: process.env.NODE_ENV === 'production',

@@ -1,21 +1,7 @@
-<template>
-  <AfEditorDialog ref="afEditorDialog" header="Employee details">
-    <EmployeeEditor></EmployeeEditor>
-  </AfEditorDialog>
-<Button label="open dialog"  @click="openGenericDialog"></Button>
-  <Dialog
-    :visible="isOpenEmployeeDialog"
-    :style="{ width: '450px' }"
-    header="Employee Details from dialog"
-    :modal="true"
-    class="p-fluid"
-  >
-    <EmployeeEditor ref="employeeEditor1" @vnode-mounted="employeeEditorMounted" />
-    <template #footer>
-      <Button label="Cancel" icon="pi pi-times" class="p-button-text" @click="closeEmployeeDialog" />
-      <Button label="Save" icon="pi pi-check" class="p-button-text" @click="saveEmployee" />
-    </template>
-  </Dialog>
+<template>  
+<AfEditorDialog ref="afEditorDialog" header="Employee details">
+    <EmployeeEditor></EmployeeEditor>    
+</AfEditorDialog> 
 
   <DataTable :value="employees">
     <template #header>
@@ -25,7 +11,7 @@
           label="Dodaj"
           icon="pi pi-plus"
           class="p-button-success p-mr-2"
-          @click="openisOpenEmployeeDialog"
+          @click="createEmployee"
         />
       </div>
     </template>
@@ -52,37 +38,18 @@ const employees = [
   { id: 4, firstName: 'Paweł', lastName: 'Brown', email: 'p.brown@ppp.com', rola: 'Administrator' },
 ]
 
-function openisOpenEmployeeDialog() {
-  isOpenEmployeeDialog.value = true
-  employeeId = null
-}
 
-function closeEmployeeDialog() {
-  isOpenEmployeeDialog.value = false
-}
-
-let employeeId: number | null
 
 function editEmployee(id: number) {
-  isOpenEmployeeDialog.value = true
-  employeeId = id
-}
-const employeeEditorMounted = () => {
-  if (employeeId != null) {
-    employeeEditor1.value.edit(employeeId)
-  }
+  afEditorDialog.value.edit(id)
 }
 
-const saveEmployee = () => {
-  employeeEditor1.value.save()
-}
 
 const afEditorDialog = ref<AfEditorDialog>(null)
-const openGenericDialog = () => {
+const createEmployee = () => {
   afEditorDialog.value.create()
 }
 
-const employeeEditor1 = ref<EmployeeEditor>(null)
 </script>
 
 <style scoped></style>
