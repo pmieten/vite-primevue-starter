@@ -35,6 +35,12 @@ If you want to use PrimeFlex + Tailwind, you have to use a tailwind prefix becau
 
 ## Project setup and usage
 
+Install node:
+
+Latest node LTS version is required (16)
+Use node manager like nvm to install.
+
+
 Install pnpm:
 [https://pnpm.io/installation](https://pnpm.io/installation)
 
